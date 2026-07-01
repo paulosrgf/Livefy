@@ -1,0 +1,194 @@
+/* Livefy — home page */
+
+.hero-playlist {
+  width: min(1100px, 92vw);
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 2em;
+  margin-bottom: 3em;
+}
+
+.playlist-art {
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  border-radius: 16px;
+  background: conic-gradient(from 180deg, var(--accent), transparent 65%);
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75em;
+  color: var(--text-muted);
+}
+
+.playlist-info h1 {
+  font-family: var(--font-display);
+  margin: 0.2em 0;
+  font-size: 2em;
+}
+
+.pill-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.6em 1.4em;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-top: 0.5em;
+}
+
+.artists-section {
+  width: min(1100px, 92vw);
+}
+
+.artists-section h2 {
+  font-family: var(--font-display);
+  margin-bottom: 1em;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5em;
+  padding-bottom: 3em;
+}
+
+.artist-card {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 1em;
+  transition: background 0.2s ease;
+}
+
+.artist-card:hover {
+  background: var(--surface-hover);
+}
+
+.artist-photo-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0.8em;
+  background: var(--surface-hover);
+}
+
+.artist-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.vinyl-disc {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 78%;
+  height: 78%;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle at center,
+    #0c0c0c 0 3px,
+    #1c1c1c 3px 6px
+  );
+  box-shadow: 0 6px 18px var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.vinyl-label {
+  width: 34%;
+  height: 34%;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85em;
+  color: #ffffff;
+}
+
+.artist-card:hover .artist-photo {
+  transform: scale(0.92);
+  opacity: 0.35;
+}
+
+.artist-card:hover .vinyl-disc {
+  opacity: 1;
+  transform: scale(1);
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.artist-name {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0.2em 0 0.4em;
+}
+
+.track-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.artist-card:hover .track-list {
+  max-height: 220px;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.35em 0;
+  font-size: 0.85em;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.track-item:hover {
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .artist-card:hover .vinyl-disc {
+    animation: none;
+  }
+  .artist-photo,
+  .vinyl-disc,
+  .track-list {
+    transition: none;
+  }
+}
