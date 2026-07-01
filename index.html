@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livefy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/home.css" />
+    <script src="/theme.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="logo">Livefy<span class="dot">.</span></span>
+      <button
+        id="theme-toggle"
+        class="button icon-button"
+        aria-label="Toggle light and dark theme"
+      >
+        <i class="bi bi-moon-stars-fill"></i>
+      </button>
+    </header>
+
+    <section class="hero-playlist">
+      <div class="playlist-art" aria-hidden="true"></div>
+      <div class="playlist-info">
+        <span class="eyebrow">Playlist</span>
+        <h1>Playlist Essentials</h1>
+        <p class="light-color">
+          <span id="essentials-count"></span> from every artist, in one queue.
+        </p>
+        <button id="play-essentials" class="button pill-button">
+          <i class="bi bi-play-fill"></i> Play all
+        </button>
+      </div>
+    </section>
+
+    <section class="artists-section">
+      <h2>Artists</h2>
+      <div id="artist-grid" class="artist-grid"></div>
+    </section>
+
+    <script src="/data.js"></script>
+    <script src="/home.js"></script>
+  </body>
+</html>
