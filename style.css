@@ -1,0 +1,166 @@
+/* Livefy — base tokens + player styles */
+
+:root {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html[data-theme="dark"] {
+  --bg-start: #3b585d;
+  --bg-end: #1d282a;
+  --text: #ffffff;
+  --text-muted: #8b999c;
+  --accent: #00b76b;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-hover: rgba(255, 255, 255, 0.12);
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="light"] {
+  --bg-start: #eaf1f0;
+  --bg-end: #d3e2df;
+  --text: #1d282a;
+  --text-muted: #5b6e71;
+  --accent: #00905a;
+  --surface: rgba(29, 40, 42, 0.05);
+  --surface-hover: rgba(29, 40, 42, 0.09);
+  --shadow: rgba(29, 40, 42, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(160deg, var(--bg-start), var(--bg-end));
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-body);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+button {
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  font-family: inherit;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.light-color {
+  color: var(--text-muted);
+}
+
+/* Shared top bar (home + player) */
+.topbar {
+  width: min(1100px, 92vw);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 0 1em;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6em;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.logo .dot {
+  color: var(--accent);
+}
+
+#theme-toggle {
+  font-size: 1.3em;
+}
+
+.icon-button {
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+/* ---- Player page ---- */
+
+.music-container {
+  width: min(500px, 92vw);
+}
+
+#below-cover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5em 0 1em 0;
+}
+
+#button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button-navigate {
+  font-size: 3em;
+}
+
+.button-biggest {
+  font-size: 4em;
+}
+
+#cover {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px var(--shadow);
+  background: var(--surface);
+}
+
+#song-name {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+#progress-bar {
+  background-color: var(--surface-hover);
+  height: 3px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+#current-progress {
+  --progress: 0%;
+  background-color: var(--text);
+  height: inherit;
+  width: var(--progress);
+  border-radius: inherit;
+}
+
+#progress-container {
+  cursor: pointer;
+}
+
+.button-active {
+  color: var(--accent);
+}
+
+#time-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: smaller;
+  margin-top: 0.5em;
+}
