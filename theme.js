@@ -10,7 +10,6 @@
     }
   }
 
-  // Applied immediately (script is not deferred) so there's no flash on load.
   applyTheme(localStorage.getItem("livefy-theme") ?? "dark");
 
   document.addEventListener("DOMContentLoaded", () => {
