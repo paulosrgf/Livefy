@@ -50,15 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
     list.className = "track-list";
     artist.songs.forEach((song, songIndex) => {
       const item = document.createElement("li");
-      item.className = "track-item";
-      item.innerHTML = `<i class="bi bi-play-fill"></i> ${song.songName}`;
-      item.addEventListener("click", () => {
-        startQueue(
-          getArtistQueue(artistIndex),
-          `${artist.name} Radio`,
-          songIndex,
-        );
+      const trackButton = document.createElement("button");
+      trackButton.type = "button";
+      trackButton.className = "track-item";
+      trackButton.innerHTML = `<i class="bi bi-play-fill"></i> ${song.songName}`;
+      trackButton.addEventListener("click", () => {
+        startQueue(getArtistQueue(artistIndex), `${artist.name} Radio`, songIndex);
       });
+      item.appendChild(trackButton);
       list.appendChild(item);
     });
 

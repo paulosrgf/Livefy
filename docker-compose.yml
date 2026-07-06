@@ -1,0 +1,7 @@
+services:
+  livefy:
+    build: .
+    container_name: livefy
+    ports:
+      - "8080:80"
+    restart: unless-stopped

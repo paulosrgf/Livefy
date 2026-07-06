@@ -25,8 +25,7 @@ const originalPlaylist = storedQueue ?? window.LivefyData.getAllSongsFlat();
 let sortedPlaylist = [...originalPlaylist];
 let index = Number(localStorage.getItem("livefy-queue-index")) || 0;
 
-playlistTitle.innerText =
-  localStorage.getItem("livefy-queue-name") ?? "Playlist Essentials";
+playlistTitle.innerText = localStorage.getItem("livefy-queue-name") ?? "Playlist Essentials";
 
 function playSong() {
   play.querySelector(".bi").classList.remove("bi-play-circle-fill");
@@ -163,10 +162,7 @@ function updateTotalTime() {
 function likeButtonClicked() {
   sortedPlaylist[index].liked = !sortedPlaylist[index].liked;
   likeButtonRender();
-  window.LivefyData.saveLike(
-    sortedPlaylist[index].file,
-    sortedPlaylist[index].liked,
-  );
+  window.LivefyData.saveLike(sortedPlaylist[index].file, sortedPlaylist[index].liked);
   localStorage.setItem("livefy-queue", JSON.stringify(sortedPlaylist));
 }
 

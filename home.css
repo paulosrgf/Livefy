@@ -87,9 +87,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition:
-    transform 0.5s ease,
-    opacity 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .vinyl-disc {
@@ -99,20 +97,14 @@
   width: 78%;
   height: 78%;
   border-radius: 50%;
-  background: repeating-radial-gradient(
-    circle at center,
-    #0c0c0c 0 3px,
-    #1c1c1c 3px 6px
-  );
+  background: repeating-radial-gradient(circle at center, #0c0c0c 0 3px, #1c1c1c 3px 6px);
   box-shadow: 0 6px 18px var(--shadow);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transform: scale(0.7);
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .vinyl-label {
@@ -174,6 +166,8 @@
   gap: 0.5em;
   padding: 0.35em 0;
   font-size: 0.85em;
+  width: 100%;
+  text-align: left;
   color: var(--text-muted);
   cursor: pointer;
 }

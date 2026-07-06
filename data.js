@@ -8,7 +8,7 @@ const artists = [
   {
     id: "jeff-buckley",
     name: "Jeff Buckley",
-    photo: "./images/artists/jeff-buckley.jpeg",
+    photo: "images/artists/jeff-buckley.webp",
     songs: [
       {
         songName: "Lover, You Should've Come Over",
@@ -71,6 +71,14 @@ const artists = [
         file: "red-hot-chili-peppers-californication",
         liked: false,
       },
+    ],
+  },
+  {
+    id: "big-boom",
+    name: "Big Boom",
+    photo: "images/artists/big-boom.webp",
+    songs: [
+      { songName: "In The Room", file: "big-boom-in-the-room", liked: false },
     ],
   },
 ];

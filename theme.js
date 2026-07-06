@@ -18,8 +18,7 @@
     const toggle = document.getElementById("theme-toggle");
     if (!toggle) return;
     toggle.addEventListener("click", () => {
-      const next =
-        root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
       localStorage.setItem("livefy-theme", next);
       applyTheme(next);
     });
