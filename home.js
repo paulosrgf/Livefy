@@ -1,4 +1,3 @@
-// Livefy — home page logic
 document.addEventListener("DOMContentLoaded", () => {
   const { artists, getAllSongsFlat, getArtistQueue } = window.LivefyData;
   const grid = document.getElementById("artist-grid");
@@ -55,7 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
       trackButton.className = "track-item";
       trackButton.innerHTML = `<i class="bi bi-play-fill"></i> ${song.songName}`;
       trackButton.addEventListener("click", () => {
-        startQueue(getArtistQueue(artistIndex), `${artist.name} Radio`, songIndex);
+        startQueue(
+          getArtistQueue(artistIndex),
+          `${artist.name} Radio`,
+          songIndex,
+        );
       });
       item.appendChild(trackButton);
       list.appendChild(item);
