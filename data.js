@@ -1,9 +1,3 @@
-// Livefy — shared artist/song data
-// Add more songs to any artist's `songs` array as you download them.
-// Expected files:
-//   images/artists/<artist-id>.webp
-//   songs/<file>.mp3
-
 const artists = [
   {
     id: "jeff-buckley",
