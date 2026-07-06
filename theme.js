@@ -1,4 +1,3 @@
-// Livefy — theme toggle (shared by index.html and player.html)
 (function () {
   const root = document.documentElement;
 
@@ -18,7 +17,8 @@
     const toggle = document.getElementById("theme-toggle");
     if (!toggle) return;
     toggle.addEventListener("click", () => {
-      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      const next =
+        root.getAttribute("data-theme") === "dark" ? "light" : "dark";
       localStorage.setItem("livefy-theme", next);
       applyTheme(next);
     });
